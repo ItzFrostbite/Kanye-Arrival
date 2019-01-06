@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kanye's Arrival Time</title>
+  </head>
+  <style>
+    html, body {
+      margin: 0;
+      background-image: url(https://motherboard-images.vice.com/content-images/contentimage/no-id/1441286087064677.jpg);
+      background-size: contain;
+      font-family: "comic sans ms";
+      font-weight: bold;
+      color: White;
+    }
+    header {
+      font-size: 50px;
+      text-align: center;
+      padding: 60px 0px 30px 0px;
+      text-shadow: 0px 2px 10px black;
+    }
+    .container {
+      display: grid;
+      text-align: center;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      text-shadow: 0px 2px 10px black;
+    }
+    .number {
+      font-size: 60px;
+    }
+
+    footer {
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 75px;
+      color: white;
+}
+
+a {
+  color: Blue;
+}
+
+  </style>
+  <body>
+    <header>Kanye's warm welcoming to office</header>
+<div class="container">
+  <div class="days">
+    <div class="number">0</div>
+    <div class="label">Days</div>
+  </div>
+
+  <div class="hours">
+    <div class="number">0</div>
+    <div class="label">Hours</div>
+  </div>
+
+  <div class="minutes">
+    <div class="number">0</div>
+    <div class="label">Minutes</div>
+  </div>
+
+  <div class="seconds">
+    <div class="number">0</div>
+    <div class="label">Seconds</div>
+  </div>
+</div>
+
+<hr/>
+<div class="br">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<footer>
+Made by <a href="https://github.com/ItzFrostbiteTv" target="_blank"><abbr title="American">Charles</abbr></a> and <a href="https://github.com/ldtek" target="_blank"><abbr title="Russian">Daniel</abbr></a>
+</footer>
+<script>
+  const daysElement = document.querySelectorAll(".number")[0];
+const hoursElement = document.querySelectorAll(".number")[1];
+const minutesElement = document.querySelectorAll(".number")[2];
+const secondsElement = document.querySelectorAll(".number")[3];
+
+const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+let capodanno = new Date(2021,1,20,0,0,0).getTime();
+let timer = setInterval(update, 1000);
+
+function update() {
+let adesso = new Date().getTime();
+let d = capodanno - adesso;
+
+if(d < 0) {
+  clearInterval(timer);
+  for(let i=0; i<document.querySelectorAll(".number").length; i++) {
+    document.querySelectorAll(".number")[i].style.color = "brown";
+  }
+}
+else {
+  daysElement.innerHTML    = Math.floor(  d           / day   );
+  hoursElement.innerHTML   = Math.floor( (d % day)    / hour  );
+  minutesElement.innerHTML = Math.floor( (d % hour)   / minute);
+  secondsElement.innerHTML = Math.floor( (d % minute) / second);
+}
+}
+</script>
+  </body>
+</html>
